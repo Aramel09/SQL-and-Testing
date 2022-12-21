@@ -32,4 +32,11 @@ describe("Users", () => {
       expect(statusCode).toBe(200);
     });
   });
+
+  describe("Delete User", () => {
+    it("Should delete a user and return 200 ", async () =>{
+      const { statusCode } = await request(app).delete("/user/10");
+      expect(statusCode).toBe(200)
+    });
+  });
 });

@@ -32,6 +32,9 @@ class UsersService {
 
     return squashedUserRows;
   }
+
+  async deleteUser(id){
+    return await this.usersRepo.deleteUser(id)}
 }
 
 module.exports = UsersService;

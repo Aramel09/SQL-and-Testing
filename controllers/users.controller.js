@@ -36,6 +36,17 @@ class UsersController {
       res.status(500).send("ERROR!");
     }
   }
+
+  async deleteUser(req, res, userId) {
+    try{
+      const idInfo = {id: userId}
+      this.usersService.deleteUser(idInfo)
+      res.status(200).send("User Deleted")
+    }
+    catch (e) {
+      console.log(e);
+      res.status(500).send("ERROR!");
+  }}
 }
 
 module.exports = UsersController;

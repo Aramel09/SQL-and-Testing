@@ -8,6 +8,10 @@ const usersController = new UsersController();
 userRouter.get("/users", (req, res) => usersController.getUsers(req, res));
 userRouter.get("/user/:id", (req, res) => usersController.getUser(req, res));
 userRouter.post("/user", (req, res) => usersController.createUser(req, res));
-// put
-// delete
+
+userRouter.delete("/user/:id", (req, res) =>{
+    const userId = req.params.id
+    usersController.deleteUser(req, res, userId)})
+
+
 module.exports = userRouter;
